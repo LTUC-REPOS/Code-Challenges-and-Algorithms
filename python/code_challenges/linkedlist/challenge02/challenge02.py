@@ -1,0 +1,73 @@
+
+class Node:
+  def __init__(self,value):
+    self.value=value
+    self.next=None
+    
+
+class Linkedlist:
+     
+    def __init__(self):
+        self.head=None
+        self.links = []
+        self.length = 0
+
+    def append(self,value):
+        new_node=Node(value)
+        if self.length ==0:
+            self.head=new_node
+            self.length+=1
+            self.links.append(value)
+
+        else: 
+            currentNode= self.head
+            
+            while currentNode.next != None:
+                currentNode = currentNode.next 
+
+            currentNode.next = new_node
+            self.links.append(value)
+            self.length+=1
+            
+    def toArray(self):
+        result = []
+        currentNode = self.head
+        while currentNode != None:
+                result.append(currentNode.value)
+                currentNode = currentNode.next # None
+        return result
+        
+    def removeByNode(self, node : Node):
+         
+        next_node = node.next
+         
+        node.value  = next_node.value
+        node.next = next_node.next
+        
+    def getNode_byValue(self,val):
+        currentNode = self.head
+        wantedNode = None
+        while (currentNode.value != val):
+            currentNode = currentNode.next
+        wantedNode = currentNode
+        return wantedNode
+
+    def Get_middle_node(self):
+        current_list = self.toArray()
+        middle_index = len(current_list) // 2
+        middle_value = current_list[middle_index]
+        return self.getNode_byValue(middle_value)
+
+
+# lista =  Linkedlist()
+
+# lista.append(1)
+# lista.append(2)
+# lista.append(3)
+# lista.append(4)
+# lista.append(5)
+
+# middle = lista.Get_middle_node()
+# print(middle.value)
+# print(middle.next.next.value)
+
