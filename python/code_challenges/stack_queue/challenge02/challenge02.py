@@ -2,16 +2,19 @@
 
 def isValid(s: str) -> bool:
     opening = '({[' 
+    closings = ')}]'
     if s[0] not in opening:
         return False
     
-    if len(s) % 2 !=0 or len(s) == 1:
-        return False
+ 
 
     full = ['()','{}', '[]']          
     stack = []
     
     for ch in s:
+        if ch not in opening and ch not in closings:
+            continue
+            
         if ch in opening:
             stack.append(ch)
         else:
