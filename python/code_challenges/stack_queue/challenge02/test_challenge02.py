@@ -16,3 +16,10 @@ def test_2():
     expected = False
 
     assert actual == expected
+    
+def test_3():
+
+    actual = isValid("[(hello)()]")
+    expected = True
+
+    assert actual == expected
