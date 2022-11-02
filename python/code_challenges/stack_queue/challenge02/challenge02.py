@@ -1,6 +1,12 @@
 # Write here the code challenge solution
 
 def isValid(s: str) -> bool:
+    
+    """
+    This function recives a string as input that contains a paranthesis and letters, it validate the paranthesis,
+    if the opening matching the closing ones, it return True otherwise it return False.
+    ""
+    
     opening = '({[' 
     closings = ')}]'
     if s[0] not in opening:
