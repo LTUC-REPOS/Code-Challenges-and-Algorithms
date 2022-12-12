@@ -27,3 +27,15 @@ def test_2():
     expected = True
 
     assert actual == expected
+
+def test_3():
+    tree = Tree()
+    input = []
+    k = 8
+    for x in input:
+        tree.insert(x)
+    
+    actual = findTarget(tree.root,k)
+    expected = False
+
+    assert actual == expected

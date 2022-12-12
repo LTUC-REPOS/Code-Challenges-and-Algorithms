@@ -47,6 +47,14 @@ class Tree:
         return list
 
 def findTarget(root : Node, k) -> bool:
+    """
+    This function receives a Root of tree and number, it return True if the sum of 2 nodes exists in
+    in the tree, otherwise it return False
+    """
+
+    if root == None:
+        return False
+
     comps = {}
     flag = False
     def inOrder(node):
