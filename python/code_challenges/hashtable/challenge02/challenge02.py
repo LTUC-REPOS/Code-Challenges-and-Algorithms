@@ -7,7 +7,7 @@ def Repeated_Word(s:str) -> str:
     This function receives a string as an input, and it returns the first 
     repated word in the string as output, otherwise it return None
     """
-
+    s =  s.strip()
     s =  r.sub("\s+"," ", s)
 
     words = s.split(' ')
